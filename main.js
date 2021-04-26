@@ -161,3 +161,50 @@ const inventory = [
     sold: 8,
   },
 ];
+
+console.log("opdracht 1");
+
+const tvsTeVerkopen = inventory.map((tv) => {
+  return tv.originalStock - tv.sold;
+});
+console.log(tvsTeVerkopen.reduce((a, b) => a + b)
+);
+
+console.log("opdracht 2a");
+
+const tvTypeName =inventory.map((tvt) =>{
+  return tvt.brand +" - "+ tvt.type + " - " + tvt.screenQuality;
+});
+console.log(tvTypeName);
+
+console.log("opdracht 2b");
+
+const notAvailable = inventory.filter((tv) => {
+  return tv.originalStock === tv.sold;
+})
+console.log(notAvailable);
+
+console.log("opdracht 2c");
+
+const hasAmbiLight = inventory.filter((tv) => {
+  return tv.options.ambiLight === true;
+
+})
+console.log(hasAmbiLight);
+
+console.log("opdracht 2d--------------------------------------------------------------------");
+
+// inventory.sort((a,b) => {
+//   if (a>b) {
+//     return 1;
+//   }
+//   if (a<b) {
+//     return -1;
+//   }
+//   return 0;
+// })
+// console.log(inventory);
+
+console.log(inventory.sort((a, b) => a - b));
+
+
