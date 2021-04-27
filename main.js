@@ -194,17 +194,48 @@ console.log(hasAmbiLight);
 
 console.log("opdracht 2d--------------------------------------------------------------------");
 
-// inventory.sort((a,b) => {
-//   if (a>b) {
-//     return 1;
-//   }
-//   if (a<b) {
-//     return -1;
-//   }
-//   return 0;
-// })
-// console.log(inventory);
+//als een prijs lager is dan de vorige prijs wissel dan van plek
 
-console.log(inventory.sort((a, b) => a - b));
+inventory.sort((a,b) => {
+  if (a.price < b.price) {
+    return -1
+  }
+  if (a.price > b.price) {
+    return 1
+  }
+  return 0;
+});
+console.log(inventory);
+
+console.log("opdracht 3a---------------------------------------------------------------------");
+
+//targetTurnover
+
+//inventory  (voorraad+sold)*prijs
+// let targetTurnover = 0
+// for(let i = 0; i = inventory.type.length; i++) {
+//   targetTurnover = targetTurnover + (inventory.originalstock * inventory.price);
+// }
+// console.log(targetTurnover);
+
+let targetTurnover = 0;
+inventory.map((inventory) => {
+  targetTurnover = inventory.price * inventory.originalStock;
+  return targetTurnover;
+});
+console.log(targetTurnover);
+
+console.log("opdracht 3b ----------------------------------------------------------------------")
+
+let turnover = 0;
+inventory.map((inventory) => {
+  if(inventory.sold > 0) {
+turnover = turnover + inventory.sold * inventory.price;
+  }
+  return turnover;
+});
+console.log(turnover);
+
+console.log("opdracht 4 ----------------------------------------------------------------------")
 
 
