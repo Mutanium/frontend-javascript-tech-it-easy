@@ -162,7 +162,7 @@ const inventory = [
   },
 ];
 
-console.log("opdracht 1");
+console.log("opdracht 1---------------------------------------------------------------------");
 
 const tvsTeVerkopen = inventory.map((tv) => {
   return tv.originalStock - tv.sold;
@@ -170,21 +170,22 @@ const tvsTeVerkopen = inventory.map((tv) => {
 console.log(tvsTeVerkopen.reduce((a, b) => a + b)
 );
 
-console.log("opdracht 2a");
+
+console.log("opdracht 2a--------------------------------------------------------------------");
 
 const tvTypeName =inventory.map((tvt) =>{
   return tvt.brand +" - "+ tvt.type + " - " + tvt.screenQuality;
 });
 console.log(tvTypeName);
 
-console.log("opdracht 2b");
+console.log("opdracht 2b-------------------------------------------------------------------");
 
 const notAvailable = inventory.filter((tv) => {
   return tv.originalStock === tv.sold;
 })
 console.log(notAvailable);
 
-console.log("opdracht 2c");
+console.log("opdracht 2c--------------------------------------------------------------------");
 
 const hasAmbiLight = inventory.filter((tv) => {
   return tv.options.ambiLight === true;
@@ -237,5 +238,7 @@ turnover = turnover + inventory.sold * inventory.price;
 console.log(turnover);
 
 console.log("opdracht 4 ----------------------------------------------------------------------")
+
+//zie browser
 
 
