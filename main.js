@@ -164,14 +164,24 @@ const inventory = [
 
 console.log("opdracht 1---------------------------------------------------------------------");
 
+//dit is een arrow functie dus geen function voorafgaand aan de declaratie, functie is herkenbaar aan de return value
 const tvsTeVerkopen = inventory.map((tv) => {
-  return tv.originalStock - tv.sold;
-});
-console.log(tvsTeVerkopen.reduce((a, b) => a + b)
-);
+  return tv.originalStock - tv.sold;});
+const totalTvToSell = (tvsTeVerkopen.reduce((a, b) => a + b));
+console.log(totalTvToSell);
 
 
-console.log("opdracht 2a--------------------------------------------------------------------");
+const container = document.getElementById("opdracht1"); // target een html element via id
+const message = document.createElement('p'); // creëer een html element, paragraaf in dit geval.
+message.setAttribute('class','aantalTeKoop'); // ken een css klasse toe aan dit element
+message.textContent = (tvsTeVerkopen.reduce((a, b) => a + b)); // declareer welke javascript output gebruikt gaat worden
+container.appendChild(message);
+
+
+
+
+
+console.log("opdracht 2a----------------------------------------------------------------");
 
 const tvTypeName =inventory.map((tvt) =>{
   return tvt.brand +" - "+ tvt.type + " - " + tvt.screenQuality;
@@ -226,6 +236,13 @@ inventory.map((inventory) => {
 });
 console.log(targetTurnover);
 
+
+const container2 = document.getElementById("opdracht3a"); // target een html element via id
+const message2 = document.createElement('p'); // creëer een html element, paragraaf in dit geval.
+message2.setAttribute('class','doelomzet'); // ken een css klasse toe aan dit element
+message2.textContent = (targetTurnover); // declareer welke javascript output gebruikt gaat worden
+container2.appendChild(message2); // voeg toe "append"
+
 console.log("opdracht 3b ----------------------------------------------------------------------")
 
 let turnover = 0;
@@ -237,8 +254,32 @@ turnover = turnover + inventory.sold * inventory.price;
 });
 console.log(turnover);
 
+const container3 = document.getElementById("opdracht3b"); // target een html element via id
+const message3 = document.createElement('p'); // creëer een html element, paragraaf in dit geval.
+message3.setAttribute('class','gemaakteomzet'); // ken een css klasse toe aan dit element
+message3.textContent = (turnover); // declareer welke javascript output gebruikt gaat worden
+container3.appendChild(message3); // voeg toe "append"
+
 console.log("opdracht 4 ----------------------------------------------------------------------")
 
-//zie browser
+// geef van twee tvs de types weer:
+const container4 = document.getElementById("tv1"); // target een html element via id
+const message4 = document.createElement('p'); // creëer een html element, paragraaf in dit geval.
+message4.setAttribute('class','tvtype'); // ken een css klasse toe aan dit element
+message4.textContent = (inventory[1].type); // declareer welke javascript output gebruikt gaat worden
+container4.appendChild(message4); // voeg toe "append"
+
+const container5 = document.getElementById("tv2"); // target een html element via id
+const message5 = document.createElement('p'); // creëer een html element, paragraaf in dit geval.
+message5.setAttribute('class','tvtype'); // ken een css klasse toe aan dit element
+message5.textContent = (inventory[2].type); // declareer welke javascript output gebruikt gaat worden
+container5.appendChild(message5); // voeg toe "append"
+
+console.log("opdracht 5 ----------------------------------------------------------------------")
+// genereer een string voor weergave van een tv
+
+
+
+
 
 
