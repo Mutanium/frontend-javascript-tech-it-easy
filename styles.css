@@ -10,3 +10,16 @@
 .tvtype {
     color: orange;
 }
+.textarea {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    display: block; /*reset from inline*/
+    width: 100%;
+    margin: 0; /*remove defaults*/
+    padding: 4px;
+    background: #EEF;
+    border: none;
+    overflow-y: auto; /*resets IE*/
+    overflow-x: hidden; /*resets IE*/
+}

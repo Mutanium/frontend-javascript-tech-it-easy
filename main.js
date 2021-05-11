@@ -275,8 +275,34 @@ message5.setAttribute('class','tvtype'); // ken een css klasse toe aan dit eleme
 message5.textContent = (inventory[2].type); // declareer welke javascript output gebruikt gaat worden
 container5.appendChild(message5); // voeg toe "append"
 
-console.log("opdracht 5 ----------------------------------------------------------------------")
-// genereer een string voor weergave van een tv
+console.log("opdracht 5 ----------------------------------------------------------------------");
+// genereer een string voor een mooie weergave van een tv
+// omkatten van de screensizes
+// let screensizes = "";
+// for (let i = 0; i < inventory[5].availableSizes.length; i++) {
+//   screensizes = screensizes + inventory[5].availableSizes[i] + "inch" + " (" + (inventory[5].availableSizes[i]/2.54).toFixed(2) +"cm) | ";
+//}
+
+// const tvPitch = (inventory[5].brand + " - " +inventory[5].type + " - " + inventory[5].name + " - " + "€"
+//     +inventory[5].price+",-" + "\n" + screensizes);
+
+//als functie:
+function tvTextLine(itemno) {
+  let screensizes = "";
+  for (let i = 0; i < inventory[itemno].availableSizes.length; i++) {
+    screensizes = screensizes + inventory[itemno].availableSizes[i] + "inch" + " (" + (inventory[itemno].availableSizes[i] / 2.54).toFixed(2) + "cm) | ";
+  }
+
+  return (inventory[itemno].brand + " - " +inventory[itemno].type + " - " + inventory[itemno].name + " - " + "€"
+      +inventory[itemno].price+",-" + "\n" + screensizes);
+}
+
+
+const container6 = document.getElementById("tv6"); // target een html element via id
+const message6 = document.createElement('textarea'); // creëer een html element, paragraaf in dit geval.
+message6.setAttribute('class','textarea'); // ken een css klasse toe aan dit element
+message6.textContent = tvTextLine(1); // declareer welke javascript output gebruikt gaat worden
+container6.appendChild(message6); // voeg toe "append"
 
 
 
