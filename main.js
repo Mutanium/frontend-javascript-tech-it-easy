@@ -266,7 +266,7 @@ console.log("opdracht 4 --------------------------------------------------------
 const container4 = document.getElementById("tv1"); // target een html element via id
 const message4 = document.createElement('p'); // creëer een html element, paragraaf in dit geval.
 message4.setAttribute('class','tvtype'); // ken een css klasse toe aan dit element
-message4.textContent = (inventory[1].type); // declareer welke javascript output gebruikt gaat worden
+message4.textContent = (inventory[4].type); // declareer welke javascript output gebruikt gaat worden
 container4.appendChild(message4); // voeg toe "append"
 
 const container5 = document.getElementById("tv2"); // target een html element via id
@@ -301,9 +301,35 @@ function tvTextLine(itemno) {
 const container6 = document.getElementById("tv6"); // target een html element via id
 const message6 = document.createElement('textarea'); // creëer een html element, paragraaf in dit geval.
 message6.setAttribute('class','textarea'); // ken een css klasse toe aan dit element
-message6.textContent = tvTextLine(1); // declareer welke javascript output gebruikt gaat worden
+message6.textContent = tvTextLine(7); // declareer welke javascript output gebruikt gaat worden
 container6.appendChild(message6); // voeg toe "append"
 
+//tv generator die alle aanwezige modellen uitprint
+//let allModels = "";
+// function tvGenerator(i){
+//   let allModels = "";
+//   for (let i = 0; i < inventory.type.length; i++) {
+//     allModels = allModels + tvTextLine(i);
+//   }
+//   return allModels;
+// }
+
+// eerdere functie nesten:
+function tvGenerator() {
+  let allTvs ="";
+  for (let i = 0; i < inventory.length; i++) {
+    tvTextLine(i);
+    allTvs = allTvs + tvTextLine(i);
+  }
+  return allTvs;
+}
+
+console.log("test"+tvGenerator())
+const container7 = document.getElementById("tvgenerator"); // target een html element via id
+const message7 = document.createElement('textarea'); // creëer een html element, paragraaf in dit geval.
+message7.setAttribute('class','textarea'); // ken een css klasse toe aan dit element
+message7.textContent = tvGenerator(); // declareer welke javascript output gebruikt gaat worden
+container7.appendChild(message7); // voeg toe "append"
 
 
 
