@@ -299,7 +299,7 @@ function tvTextLine(itemno) {
 
 
 const container6 = document.getElementById("tv6"); // target een html element via id
-const message6 = document.createElement('textarea'); // creëer een html element, paragraaf in dit geval.
+const message6 = document.createElement('textarea'); // creëer een html element, texstarea in dit geval.
 message6.setAttribute('class','textarea'); // ken een css klasse toe aan dit element
 message6.textContent = tvTextLine(7); // declareer welke javascript output gebruikt gaat worden
 container6.appendChild(message6); // voeg toe "append"
